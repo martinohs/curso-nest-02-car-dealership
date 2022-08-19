@@ -11,18 +11,10 @@ import { UpdateCarDto } from './dtos/update-car.dto';
 export class CarsService {
 
     private cars: Car[] = [
-        {   id:uuid(),
-            brand: 'Toyota',
-            model: 'Corolla'
-        },
-        {   id:uuid(),
-            brand: 'Honda',
-            model: 'Civic'
-        },
-        {   id:uuid(),
-            brand: 'Gol',
-            model: 'Trend'
-        },
+        // {   id:uuid(),
+        //     brand: 'Toyota',
+        //     model: 'Corolla'
+        // },
 
     ]
 
@@ -81,6 +73,10 @@ export class CarsService {
         this.cars = this.cars.filter(car => car.id !== id);
 
         return this.cars
+    }
+
+    public fillCarsWithSeedData ( cars: Car[]){
+        this.cars = cars
     }
 
 }
